@@ -27,9 +27,6 @@ def parse_input(user_input: str) -> tuple[str, list[str]]:
 @input_error
 def add_contact(args: list[str], contacts: dict[str, str]) -> str:
     """Function that allows creating and saving a contact with name and phone number"""
-    if len(args) != 2:
-        raise ValueError
-
     name, phone = args
     contacts[name] = phone
     return "Contact added"
@@ -37,12 +34,8 @@ def add_contact(args: list[str], contacts: dict[str, str]) -> str:
 @input_error
 def change_contact(args: list[str], contacts: dict[str, str]) -> str:
     """Function that allows changing the phone number of an existing contact"""
-    if len(args) != 2:
-        raise ValueError
-
     name, phone = args
-    if name not in contacts:
-        raise KeyError
+    contacts[name]
     contacts[name] = phone
     return "Contact updated"
 
